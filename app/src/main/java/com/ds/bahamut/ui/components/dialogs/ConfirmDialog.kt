@@ -18,16 +18,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import com.ds.bahamut.R
 import com.ds.bahamut.ui.components.buttons.FixedButton
 import com.ds.bahamut.ui.components.textfields.ClearTextField
+import com.ds.bahamut.ui.theme.Gray50
 import com.ds.bahamut.ui.theme.Success
 
 @Composable
@@ -58,16 +56,17 @@ fun ConfirmInputDialog(
                     .absolutePadding(top = 8.dp, bottom = 24.dp, right = 16.dp, left = 16.dp),
                 value = input,
                 onValueChange = setInput,
-                shape = RoundedCornerShape(8.dp),
+                shape = RoundedCornerShape(4.dp),
                 singleLine = true,
-                keyboardOptions = keyboardOptions
+                keyboardOptions = keyboardOptions,
+                label = "Input"
             )
 
             FixedButton(
                 buttonText = stringResource(R.string.dialog_confirm_button),
-                buttonShape = RoundedCornerShape(bottomStart = 8.dp, bottomEnd = 8.dp),
-                buttonIcon = Icons.Filled.Check,
-                buttonColor = Success
+                buttonShape = RoundedCornerShape(bottomStart = 4.dp, bottomEnd = 4.dp),
+                buttonColor = Success,
+                textColor = Gray50
             ) {
                 confirm(input)
                 close()

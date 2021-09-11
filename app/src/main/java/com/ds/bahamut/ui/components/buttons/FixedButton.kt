@@ -7,6 +7,7 @@ import androidx.compose.material.*
 import androidx.compose.material.MaterialTheme.colors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.composed
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.Shape
@@ -22,6 +23,7 @@ val fixedButtonModifier = Modifier
 
 @Composable
 fun FixedButton(
+    modifier: Modifier = Modifier,
     buttonColor: Color = colors.primary,
     buttonShape: Shape = RectangleShape,
     buttonListener: () -> Unit,
@@ -29,7 +31,7 @@ fun FixedButton(
 ) {
     Button(
         onClick = { buttonListener() },
-        modifier = fixedButtonModifier,
+        modifier = fixedButtonModifier.composed { modifier },
         colors = ButtonDefaults.buttonColors(backgroundColor = buttonColor),
         shape = buttonShape
     ) {
@@ -40,15 +42,17 @@ fun FixedButton(
 
 @Composable
 fun FixedButton(
+    modifier: Modifier = Modifier,
     buttonText: String,
     buttonColor: Color = colors.primary,
+    textColor: Color = colors.onPrimary,
     buttonShape: Shape = RectangleShape,
     buttonIcon: ImageVector? = null,
     buttonListener: () -> Unit
 ) {
     Button(
         onClick = { buttonListener() },
-        modifier = fixedButtonModifier,
+        modifier = fixedButtonModifier.composed { modifier },
         colors = ButtonDefaults.buttonColors(backgroundColor = buttonColor),
         shape = buttonShape
     ) {
@@ -57,13 +61,13 @@ fun FixedButton(
                 imageVector = icon,
                 contentDescription = "icon",
                 modifier = Modifier.absolutePadding(right = 4.dp),
-                tint = colors.onPrimary
+                tint = textColor
             )
         }
 
         Text(
             text = buttonText,
-            color = colors.onPrimary,
+            color = textColor,
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold
         )
