@@ -4,6 +4,10 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.ds.bahamut.sample.button.ButtonsActivity
+import com.ds.bahamut.sample.card.CardsActivity
+import com.ds.bahamut.sample.dialog.DialogActivity
+import com.ds.bahamut.sample.menu.MenuListActivity
 import com.ds.bahamut.sample.utils.BaseComponentActivity
 
 
@@ -21,6 +25,7 @@ class MainActivity : BaseComponentActivity() {
             composable("menu") { MenuListActivity(navController) }
             composable("dialogs") { DialogActivity() }
             composable("buttons") { ButtonsActivity() }
+            composable("cards") { CardsActivity() }
         }
 
     }

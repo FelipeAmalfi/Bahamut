@@ -1,4 +1,4 @@
-package com.ds.bahamut.sample
+package com.ds.bahamut.sample.menu
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Column
@@ -9,16 +9,12 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.DashboardCustomize
-import androidx.compose.material.icons.filled.Gamepad
-import androidx.compose.material.icons.filled.Message
-import androidx.compose.material.icons.filled.SmartButton
+import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.ds.bahamut.ui.components.cards.MenuItemCard
-
+import com.ds.bahamut.ui.components.cards.ItemCard
 
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -33,7 +29,7 @@ fun MenuListActivity(navController: NavHostController) {
             contentPadding = PaddingValues(8.dp)
         ) {
             items(getMenuItems(navController = navController)){ menuItem ->
-                MenuItemCard(
+                ItemCard(
                     cardText = menuItem.name,
                     cardIcon = menuItem.icon
                 ) {
@@ -43,19 +39,18 @@ fun MenuListActivity(navController: NavHostController) {
         }
 
     }
-
-
-
 }
 
-
-private data class MenuItem(val name: String, val icon: ImageVector? = null, val itemClickListener: () -> Unit )
 
 private fun getMenuItems(navController: NavHostController): List<MenuItem> = listOf(
         MenuItem("Dialogs", Icons.Filled.Message){navController.navigate("dialogs")},
         MenuItem("Buttons", Icons.Filled.Gamepad){navController.navigate("buttons")},
-        MenuItem("Cards", Icons.Filled.DashboardCustomize){navController.navigate("buttons")},
-        MenuItem("App Bars", Icons.Filled.SmartButton){navController.navigate("buttons")}
+        MenuItem("Cards", Icons.Filled.DashboardCustomize){navController.navigate("cards")},
+        MenuItem("Text Fields", Icons.Filled.TextFormat){},
+        MenuItem("Banners", Icons.Filled.AdUnits){},
+        MenuItem("Avatar", Icons.Filled.AccountCircle){},
+        MenuItem("App Bars", Icons.Filled.SmartButton){},
+
     )
 
 

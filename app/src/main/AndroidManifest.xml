@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ds.bahamut">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,16 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Bahamut">
-        <activity
-            android:name=".sample.DialogsActivity"
-            android:exported="true"
-            android:label="@string/title_activity_dialogs"
-            android:theme="@style/Theme.Bahamut" />
-        <activity
-            android:name=".sample.MenuListActivity"
-            android:exported="true"
-            android:label="@string/title_activity_menu_list"
-            android:theme="@style/Theme.Bahamut" />
         <activity
             android:name=".sample.MainActivity"
             android:exported="true"
