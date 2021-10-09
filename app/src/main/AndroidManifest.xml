@@ -10,7 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Bahamut">
         <activity
-            android:name=".MainActivity"
+            android:name=".sample.DialogsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_dialogs"
+            android:theme="@style/Theme.Bahamut" />
+        <activity
+            android:name=".sample.MenuListActivity"
+            android:exported="true"
+            android:label="@string/title_activity_menu_list"
+            android:theme="@style/Theme.Bahamut" />
+        <activity
+            android:name=".sample.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Bahamut">
