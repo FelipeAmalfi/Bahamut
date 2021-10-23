@@ -1,9 +1,13 @@
 package com.ds.sample
 
+import android.os.Bundle
+import androidx.compose.material.darkColors
+import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.ds.bahamut.ui.theme.*
 import com.ds.sample.button.ButtonsActivity
 import com.ds.sample.card.CardsActivity
 import com.ds.sample.dialog.DialogActivity

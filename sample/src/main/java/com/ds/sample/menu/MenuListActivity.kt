@@ -11,11 +11,13 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.ds.bahamut.ui.components.cards.ItemCard
 import com.ds.bahamut.ui.components.tooltip.TooltipComponent
 import com.ds.bahamut.ui.components.tooltip.TooltipPosition
+import com.ds.bahamut.R
 
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -26,7 +28,7 @@ fun MenuListActivity(navController: NavHostController) {
         TopAppBar(
             title = { Text(text = "Bahamut") }
         )
-        Box(modifier = Modifier.fillMaxWidth().padding(16.dp)) {
+        Box(modifier = Modifier.fillMaxWidth()) {
             TooltipComponent(
                 text = "Isso é um tooltip",
                 position = TooltipPosition.LEFT

@@ -2,6 +2,7 @@ package com.ds.bahamut.ui.components.tooltip
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -20,6 +21,7 @@ fun Balloon(
 ){
     Box(
         modifier = Modifier
+            .wrapContentWidth()
             .background(
                 color = color,
                 shape = RoundedCornerShape(size = 8.dp)
